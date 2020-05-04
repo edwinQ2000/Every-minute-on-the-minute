@@ -5,6 +5,7 @@
  */
 package timmer;
 
+import java.awt.EventQueue;
 import java.util.Scanner;
 
 /**
@@ -18,14 +19,27 @@ public class Timmer {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        
-       Scanner sc=new Scanner(System.in);
-       int total=sc.nextInt();
-       int activo=sc.nextInt();
-       control cont=new control(total,activo);
-       cont.correr();
-       
+    	
+    	EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					PrimeraVentana ventanaUno = new PrimeraVentana();
+					ventanaUno.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+    
+    	});
+      
     }
+        
     
 }
+
+    		
+   
+   
+  
+    
+
